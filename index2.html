@@ -3,123 +3,167 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Samuel Garcia — Systems Readout</title>
+<title>Samuel Garcia — Portfolio</title>
 <style>
 
-  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Work+Sans:wght@400;500;600&display=swap');
 
   :root{
-    --bg: #111412;
-    --panel: #171B18;
-    --amber: #E8A33D;
-    --amber-dim: #8C6423;
-    --slate: #5C8A9C;
-    --text: #E9E4D8;
-    --text-dim: #8A8F86;
-    --line: #2A2F2B;
+    --bg: #101012;
+    --panel: #18181B;
+    --ink: #F5F3ED;
+    --ink-soft: #8E8D92;
+    --accent: #FF4D5E;
+    --accent2: #F2B705;
+    --line: #26262B;
 
-    --mono: 'JetBrains Mono', monospace;
+    --display: 'Oswald', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+    --body: 'Work Sans', sans-serif;
   }
 
   *{ box-sizing:border-box; margin:0; padding:0; }
   html{ scroll-behavior:smooth; }
-  body{
-    background:var(--bg); color:var(--text); font-family:var(--mono); line-height:1.6;
-    background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
-    background-size: 30px 30px;
-  }
+  body{ background:var(--bg); color:var(--ink); font-family:var(--body); line-height:1.7; }
   a{ color:inherit; text-decoration:none; }
-  .wrap{ max-width:1020px; margin:0 auto; padding:0 28px; }
+  .wrap{ max-width:1040px; margin:0 auto; padding:0 30px; }
 
-  .tag{ font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--slate); }
+  .tag{ font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-soft); }
 
-  header{ position:sticky; top:0; z-index:50; background:rgba(17,20,18,0.92); border-bottom:1px solid var(--line); }
-  header .wrap{ display:flex; justify-content:space-between; align-items:center; padding:14px 28px; font-size:12px; }
-  .brand{ letter-spacing:0.05em; }
-  .brand span{ color:var(--amber); }
-  nav ul{ display:flex; gap:24px; list-style:none; font-size:11px; text-transform:uppercase; letter-spacing:0.08em; }
-  nav a{ color:var(--text-dim); transition:color .2s; }
-  nav a:hover{ color:var(--amber); }
-  .status-dot{ display:inline-block; width:6px; height:6px; background:var(--amber); border-radius:50%; margin-right:6px; box-shadow:0 0 6px var(--amber); }
-
-  .hero{ padding:70px 0 56px; }
-  .hero-grid{ display:grid; grid-template-columns:1.3fr 1fr; gap:40px; align-items:start; }
-  .hero .tag{ display:block; margin-bottom:16px; }
-  .hero h1{
-    font-size:clamp(28px, 4.4vw, 44px); font-weight:700; line-height:1.25; letter-spacing:-0.01em; color:var(--text);
+  .chip{
+    display:inline-block; font-family:var(--mono); font-size:9.5px; letter-spacing:0.06em; text-transform:uppercase;
+    padding:5px 12px; margin-right:6px; border-radius:5px;
+    background:linear-gradient(90deg, var(--accent), var(--accent2)); color:#151316; font-weight:600;
   }
-  .hero h1 span{ color:var(--amber); }
-  .hero .lede{ margin-top:20px; font-size:14px; color:var(--text-dim); max-width:56ch; }
+
+  header{ position:sticky; top:0; z-index:50; background:rgba(16,16,18,0.9); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
+  header .wrap{ display:flex; justify-content:space-between; align-items:center; padding:18px 30px; }
+  .brand{ font-family:var(--display); font-weight:600; font-size:16px; letter-spacing:0.05em; text-transform:uppercase; }
+  .brand span{ color:var(--accent); }
+  nav ul{ display:flex; gap:26px; list-style:none; font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:0.08em; }
+  nav a{ color:var(--ink-soft); transition:color .2s; }
+  nav a:hover{ color:var(--ink); }
+
+  .hero-main{ padding:70px 0 0; position:relative; }
+  .hero-grid{ display:grid; grid-template-columns:1.25fr 0.9fr; gap:44px; align-items:center; }
+  .hero-eyebrow{ font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); }
+  .hero h1{
+    font-family:var(--display); font-weight:700; text-transform:uppercase;
+    font-size:clamp(32px, 5vw, 54px); line-height:1.05; letter-spacing:0.01em; color:#fff; margin-top:16px;
+  }
+  .hero .lede{ margin-top:22px; font-size:15.5px; color:var(--ink-soft); max-width:52ch; }
   .contact-row{ margin-top:28px; display:flex; flex-wrap:wrap; gap:12px; }
   .btn{
-    font-size:11px; letter-spacing:0.06em; text-transform:uppercase; padding:10px 18px;
-    border:1px solid var(--amber-dim); color:var(--text); display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--display); font-weight:600; font-size:12px; letter-spacing:0.04em; text-transform:uppercase;
+    padding:11px 22px; border-radius:30px; border:1px solid var(--line); color:var(--ink); display:inline-flex; align-items:center; gap:8px;
     transition:background .2s, color .2s, border-color .2s;
   }
-  .btn:hover{ background:var(--amber); color:var(--bg); border-color:var(--amber); }
-  .btn.solid{ background:var(--amber); color:var(--bg); border-color:var(--amber); }
-  .btn.solid:hover{ background:var(--slate); border-color:var(--slate); }
+  .btn:hover{ background:rgba(255,255,255,0.06); border-color:var(--ink-soft); }
+  .btn.solid{ background:var(--accent); border-color:var(--accent); color:#151316; }
+  .btn.solid:hover{ filter:brightness(1.1); }
 
-  /* corner-bracket panel frame — signature element */
-  .panel{ position:relative; border:1px solid var(--line); background:var(--panel); padding:22px; }
-  .panel::before, .panel::after{
-    content:""; position:absolute; width:14px; height:14px; border:1px solid var(--amber);
+  .halo-photo-wrap{ display:flex; flex-direction:column; align-items:center; }
+  .halo-photo{
+    width:250px; height:250px; border-radius:50%; position:relative;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 0 60px 12px rgba(255,77,94,0.28);
   }
-  .panel::before{ top:-1px; left:-1px; border-right:none; border-bottom:none; }
-  .panel::after{ bottom:-1px; right:-1px; border-left:none; border-top:none; }
+  .halo-photo img{ width:100%; height:100%; border-radius:50%; object-fit:cover; display:block; }
 
-  .media-slot{ min-height:220px; display:flex; align-items:center; justify-content:center; text-align:center; font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-dim); }
+  .impact-strip{ margin-top:50px; display:grid; grid-template-columns:repeat(4,1fr); }
+  .impact-cell{ padding:10px 14px; text-align:center; }
+  .impact-cell .num{ font-family:var(--display); font-weight:700; font-size:28px; color:#fff; }
+  .impact-cell .lbl{ font-family:var(--mono); font-size:9.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-soft); margin-top:6px; display:block; }
 
-  .divider{ display:flex; align-items:center; gap:10px; margin:60px 0 34px; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--slate); }
-  .divider::before, .divider::after{ content:""; flex:1; height:1px; background:var(--line); }
+  .divider{ display:flex; align-items:center; gap:14px; margin:78px 0 36px; }
+  .divider .lbl{ font-family:var(--display); font-weight:600; text-transform:uppercase; font-size:14px; letter-spacing:.06em; white-space:nowrap; color:#fff; }
+  .divider::after{ content:""; flex:1; height:1px; background:var(--line); }
 
-  section{ padding-top:6px; }
-  .section-head h2{ font-size:22px; font-weight:700; margin-bottom:26px; letter-spacing:-0.01em; }
+  section{ padding-top:6px; text-align:left; }
 
-  /* radial gauge stats — signature element */
-  .gauge-row{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-bottom:44px; }
-  .gauge{ text-align:center; }
-  .gauge svg{ width:100%; max-width:110px; }
-  .gauge .val{ font-size:15px; color:var(--amber); font-weight:700; margin-top:6px; display:block; }
-  .gauge .lbl{ font-size:10px; color:var(--text-dim); text-transform:uppercase; letter-spacing:.06em; }
+  .skills-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:8px; overflow:hidden; margin-bottom:10px; }
+  .skill-cell{ background:var(--panel); padding:22px; }
+  .skill-cell .tag{ display:block; margin-bottom:12px; color:var(--accent); }
+  .skill-cell p{ font-size:13.5px; color:var(--ink-soft); }
 
   .projects-grid{ display:grid; gap:20px; }
-  .project-card{ padding:26px; }
-  .project-top{ display:flex; justify-content:space-between; align-items:baseline; font-size:11px; color:var(--text-dim); margin-bottom:14px; text-transform:uppercase; letter-spacing:.05em; }
-  .project-card h3{ font-size:18px; color:var(--text); margin-bottom:10px; }
-  .project-grid-inner{ display:grid; grid-template-columns:1.3fr 1fr; gap:26px; align-items:start; }
-  .project-card p{ font-size:13px; color:var(--text-dim); }
-  .spec-list{ font-size:11.5px; list-style:none; display:flex; flex-direction:column; gap:8px; }
-  .spec-list li{ padding-left:16px; position:relative; color:var(--text-dim); }
-  .spec-list li::before{ content:">"; position:absolute; left:0; color:var(--amber); }
+  .project-card{ border:1px solid var(--line); background:var(--panel); border-radius:8px; padding:28px; position:relative; }
+  .project-card .num-tag{
+    position:absolute; top:-14px; left:22px; background:var(--accent); color:#151316;
+    font-family:var(--display); font-weight:700; font-size:13px; padding:3px 13px; letter-spacing:.05em;
+    border-radius:3px; transform:skewX(-8deg);
+  }
+  .project-top{ display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:14px; margin-top:6px; }
+  .project-body{ display:grid; grid-template-columns:1.3fr 1fr; gap:28px; }
+  .project-card h3{ font-family:var(--display); font-weight:700; font-size:20px; text-transform:uppercase; color:#fff; }
+  .project-card p{ color:var(--ink-soft); font-size:14px; }
+  .spec-list{ font-family:var(--mono); font-size:11.5px; list-style:none; display:flex; flex-direction:column; gap:8px; }
+  .spec-list li{ padding-left:14px; position:relative; color:var(--ink-soft); }
+  .spec-list li::before{ content:"·"; position:absolute; left:0; color:var(--accent); font-weight:700; }
   .project-links{ margin-top:16px; }
-  .project-links a{ font-size:10.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--slate); border-bottom:1px solid var(--slate); padding-bottom:2px; }
-  .project-media{ margin-top:18px; }
+  .project-links a{ font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-soft); border-bottom:1px solid var(--line); padding-bottom:2px; }
+  .project-media{ margin-top:18px; min-height:130px; border:1px dashed var(--line); border-radius:8px; display:flex; align-items:center; justify-content:center; text-align:center; font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-soft); padding:14px; }
 
-  .minor-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-  .minor-cell{ border:1px solid var(--line); background:var(--panel); padding:18px; }
-  .minor-cell h4{ font-size:13px; color:var(--text); margin-bottom:6px; }
-  .minor-cell p{ font-size:12px; color:var(--text-dim); }
+  /* single-image gallery viewer — full image visible, step through with prev/next */
+  .gallery{ margin-top:18px; }
+  .gallery-label{ font-family:var(--mono); font-size:9.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-soft); margin-bottom:8px; display:flex; justify-content:space-between; }
+  .gallery-viewport{
+    position:relative; width:100%; aspect-ratio:4/3; border-radius:8px; overflow:hidden;
+    border:1px solid var(--line); background:#000;
+  }
+  .gallery-img{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:contain; background:#000;
+    opacity:0; transition:opacity .35s ease; pointer-events:none;
+  }
+  .gallery-img.active{ opacity:1; pointer-events:auto; }
+  .gallery-nav{
+    position:absolute; top:50%; transform:translateY(-50%); z-index:5;
+    width:36px; height:36px; border-radius:50%; background:rgba(16,16,18,0.65); border:1px solid var(--line);
+    color:#fff; font-family:var(--mono); font-size:16px; display:flex; align-items:center; justify-content:center;
+    cursor:pointer; transition:background .2s, border-color .2s;
+  }
+  .gallery-nav:hover{ background:var(--accent); border-color:var(--accent); color:#151316; }
+  .gallery-nav.prev{ left:10px; }
+  .gallery-nav.next{ right:10px; }
+  .gallery-counter{
+    position:absolute; bottom:10px; right:12px; z-index:5; font-family:var(--mono); font-size:10.5px;
+    color:#fff; background:rgba(16,16,18,0.65); padding:3px 9px; border-radius:20px; border:1px solid var(--line);
+  }
+  .gallery-dots{ display:flex; gap:6px; justify-content:center; margin-top:10px; }
+  .gallery-dots span{ width:6px; height:6px; border-radius:50%; background:var(--line); cursor:pointer; transition:background .2s; }
+  .gallery-dots span.active{ background:var(--accent); }
 
-  .exp-row{ display:grid; grid-template-columns:160px 1fr; gap:20px; padding:20px 0; border-top:1px solid var(--line); }
+  .minor-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+  .minor-cell{ background:var(--panel); padding:20px; }
+  .minor-cell h4{ font-family:var(--display); font-weight:600; font-size:13px; text-transform:uppercase; margin-bottom:6px; color:#fff; letter-spacing:.02em; }
+  .minor-cell p{ font-size:12.5px; color:var(--ink-soft); }
+
+  .exp-row{
+    display:grid; grid-template-columns:170px 1fr; gap:24px; padding:24px 0 24px 20px;
+    border-top:1px solid var(--line); position:relative;
+  }
+  .exp-row::before{
+    content:""; position:absolute; left:0; top:10px; bottom:10px; width:4px; border-radius:3px;
+    background:var(--accent);
+  }
   .exp-row:last-child{ border-bottom:1px solid var(--line); }
-  .exp-date{ font-size:11px; color:var(--amber); }
-  .exp-role h4{ font-size:14px; color:var(--text); }
-  .exp-role .org{ font-size:11px; color:var(--text-dim); margin:4px 0 8px; display:block; }
-  .exp-role p{ font-size:12.5px; color:var(--text-dim); }
+  .exp-date{ font-family:var(--mono); font-size:11.5px; color:var(--accent); }
+  .exp-role h4{ font-family:var(--display); font-weight:700; font-size:18px; text-transform:uppercase; color:#fff; letter-spacing:.02em; margin-top:8px; }
+  .exp-role .org{ font-family:var(--mono); font-size:11px; color:var(--ink-soft); margin:5px 0 10px; display:block; }
+  .exp-role p{ font-size:14px; color:var(--ink-soft); }
 
-  footer{ margin-top:80px; border-top:1px solid var(--line); padding:30px 0 46px; }
-  footer .wrap{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; font-size:11px; }
-  .foot-links{ display:flex; gap:18px; }
-  .foot-links a{ color:var(--text-dim); }
-  .foot-links a:hover{ color:var(--amber); }
+  footer{ margin-top:100px; border-top:1px solid var(--line); padding:36px 0 50px; }
+  footer .wrap{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+  .foot-links{ display:flex; gap:20px; }
+  .foot-links a{ font-family:var(--mono); font-size:11.5px; color:var(--ink-soft); }
+  .foot-links a:hover{ color:#fff; }
 
   @media (max-width: 760px){
     nav ul{ display:none; }
     .hero-grid{ grid-template-columns:1fr; }
-    .gauge-row{ grid-template-columns:repeat(2,1fr); }
-    .project-grid-inner{ grid-template-columns:1fr; }
-    .minor-grid{ grid-template-columns:1fr; }
+    .halo-photo-wrap{ margin-top:30px; }
+    .impact-strip{ grid-template-columns:repeat(2,1fr); row-gap:20px; }
+    .skills-grid, .minor-grid{ grid-template-columns:1fr; }
+    .project-body{ grid-template-columns:1fr; }
     .exp-row{ grid-template-columns:1fr; }
   }
 
@@ -129,7 +173,7 @@
 
 <header>
   <div class="wrap">
-    <div class="brand">SAM<span>_</span>GARCIA.SYS</div>
+    <div class="brand">SAM<span>·</span>GARCIA</div>
     <nav>
       <ul>
         <li><a href="#projects">Projects</a></li>
@@ -143,15 +187,16 @@
 
 <main class="wrap">
 
-  <section class="hero">
+  <section class="hero-main">
     <div class="hero-grid">
       <div>
-        <span class="tag"><span class="status-dot"></span>status: online / accepting internship offers</span>
-        <h1>Mechanical Engineering student running <span>diagnostics</span> on real-world problems.</h1>
+        <div class="hero-eyebrow">Mechanical Engineering &amp; Robotics · Berkeley City College</div>
+        <h1>Built for the build.</h1>
         <p class="lede">
           Research intern in the CARE Lab under Dr. Quintero at San Francisco State University, working on
           lower-limb exoskeletons. Outside the lab, I build low cost, open source drones, robotic arms, and
-          autonomous vehicles from the ground up. Interested in where engineering and business decisions meet.
+          autonomous vehicles from the ground up. I'm especially interested in where engineering and
+          business decisions meet.
         </p>
         <div class="contact-row">
           <a class="btn solid" href="mailto:payuski6@gmail.com">Email Me</a>
@@ -159,53 +204,41 @@
           <a class="btn" href="https://github.com/Sam-payu-tech" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
-      <div class="panel media-slot">
-        <!-- Swap for: <img src="your-photo.jpg" alt="Samuel Garcia" style="width:100%;height:100%;object-fit:cover;"> -->
-        + PHOTO FEED<br>[ at the workbench ]
+      <div class="halo-photo-wrap">
+        <div class="halo-photo">
+          <img src="assets/portrait.jpg" alt="Samuel Garcia" width="250" height="250" decoding="async">
+        </div>
       </div>
+    </div>
+
+    <div class="impact-strip">
+      <div class="impact-cell"><span class="num">400%</span><span class="lbl">3D Print ROI</span></div>
+      <div class="impact-cell"><span class="num">40+</span><span class="lbl">Students Reached</span></div>
+      <div class="impact-cell"><span class="num">100+</span><span class="lbl">CAD Docs Standardized</span></div>
+      <div class="impact-cell"><span class="num">200+</span><span class="lbl">Event Attendees</span></div>
     </div>
   </section>
 
-  <div class="divider">// key readouts</div>
-
-  <section>
-    <div class="gauge-row">
-      <div class="gauge">
-        <svg viewBox="0 0 100 60"><path d="M10,55 A40,40 0 0,1 90,55" fill="none" stroke="#2A2F2B" stroke-width="7"/><path d="M10,55 A40,40 0 0,1 90,55" fill="none" stroke="#E8A33D" stroke-width="7" stroke-dasharray="126" stroke-dashoffset="12" stroke-linecap="round"/></svg>
-        <span class="val">400%</span><span class="lbl">3D Print ROI</span>
-      </div>
-      <div class="gauge">
-        <svg viewBox="0 0 100 60"><path d="M10,55 A40,40 0 0,1 90,55" fill="none" stroke="#2A2F2B" stroke-width="7"/><path d="M10,55 A40,40 0 0,1 90,55" fill="none" stroke="#E8A33D" stroke-width="7" stroke-dasharray="126" stroke-dashoffset="30" stroke-linecap="round"/></svg>
-        <span class="val">40+</span><span class="lbl">Students Reached</span>
-      </div>
-      <div class="gauge">
-        <svg viewBox="0 0 100 60"><path d="M10,55 A40,40 0 0,1 90,55" fill="none" stroke="#2A2F2B" stroke-width="7"/><path d="M10,55 A40,40 0 0,1 90,55" fill="none" stroke="#E8A33D" stroke-width="7" stroke-dasharray="126" stroke-dashoffset="20" stroke-linecap="round"/></svg>
-        <span class="val">100+</span><span class="lbl">CAD Docs Standardized</span>
-      </div>
-      <div class="gauge">
-        <svg viewBox="0 0 100 60"><path d="M10,55 A40,40 0 0,1 90,55" fill="none" stroke="#2A2F2B" stroke-width="7"/><path d="M10,55 A40,40 0 0,1 90,55" fill="none" stroke="#E8A33D" stroke-width="7" stroke-dasharray="126" stroke-dashoffset="60" stroke-linecap="round"/></svg>
-        <span class="val">01</span><span class="lbl">ALPFA Chapter Launched</span>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider">// featured builds</div>
+  <div class="divider"><span class="lbl">Featured Builds</span></div>
 
   <section id="projects">
     <div class="projects-grid">
 
-      <article class="panel project-card">
-        <div class="project-top"><span>PROJECT / SG-001</span><span>STATUS: FLIGHT-TESTED</span></div>
-        <div class="project-grid-inner">
+      <article class="project-card">
+        <span class="num-tag">No. 01</span>
+        <div class="project-top">
+          <h3>Low Cost, Open Source Drone</h3>
+          <span class="chip">Engineering</span>
+        </div>
+        <div class="project-body">
           <div>
-            <h3>Low Cost, Open Source Drone</h3>
             <p>
               A full build, top to bottom: airframe, radio transceiver link, and flight control electronics,
               designed to be affordable and efficient rather than assembled from a kit. Getting a stable,
               responsive control loop running meant working across mechanical, electrical, and programming
               all at once.
             </p>
-            <div class="project-links"><a href="https://github.com/Sam-payu-tech" target="_blank" rel="noopener">&gt; view_repo()</a></div>
+            <div class="project-links"><a href="https://github.com/Sam-payu-tech" target="_blank" rel="noopener">View Repository →</a></div>
           </div>
           <ul class="spec-list">
             <li>Low cost, open source design</li>
@@ -214,23 +247,43 @@
             <li>Arduino-based control logic</li>
           </ul>
         </div>
-        <div class="media-slot project-media" style="min-height:140px;">
-          <!-- Swap for: <video src="drone-flight.mp4" controls style="width:100%;"></video>
-               or embed YouTube: <iframe width="100%" height="220" src="https://www.youtube-nocookie.com/embed/VIDEO_ID"></iframe> -->
-          + VIDEO FEED [ flight test footage ]
+        <div class="gallery" id="gallery-drone">
+          <div class="gallery-label"><span>Build Gallery</span><span id="counter-drone">1 / 7</span></div>
+          <div class="gallery-viewport">
+            <img class="gallery-img active" decoding="async" src="assets/drone-01.jpg" alt="Drone build 1">
+            <img class="gallery-img" data-src="assets/drone-02.jpg" alt="Drone build 2">
+            <img class="gallery-img" data-src="assets/drone-03.jpg" alt="Drone build 3">
+            <img class="gallery-img" data-src="assets/drone-04.jpg" alt="Drone build 4">
+            <img class="gallery-img" data-src="assets/drone-05.jpg" alt="Drone build 5">
+            <img class="gallery-img" data-src="assets/drone-06.jpg" alt="Drone build 6">
+            <img class="gallery-img" data-src="assets/drone-07.jpg" alt="Drone build 7">
+            <button class="gallery-nav prev" aria-label="Previous photo">‹</button>
+            <button class="gallery-nav next" aria-label="Next photo">›</button>
+          </div>
+        </div>
+        <div style="margin-top:18px;">
+          <div class="gallery-label"><span>Demo Video</span></div>
+          <div style="position:relative; width:100%; max-width:280px; aspect-ratio:9/16; border-radius:8px; overflow:hidden; border:1px solid var(--line); background:#000;">
+            <video controls playsinline preload="none" poster="assets/drone-demo-poster.jpg" style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain; background:#000;">
+              <source src="assets/drone-demo.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
       </article>
 
-      <article class="panel project-card">
-        <div class="project-top"><span>PROJECT / SG-002</span><span>STATUS: OPERATIONAL</span></div>
-        <div class="project-grid-inner">
+      <article class="project-card">
+        <span class="num-tag">No. 02</span>
+        <div class="project-top">
+          <h3>Robotic Arm — Servo-Actuated Joints</h3>
+          <span class="chip">Engineering</span>
+        </div>
+        <div class="project-body">
           <div>
-            <h3>Robotic Arm — Servo-Actuated Joints</h3>
             <p>
               Designed in Fusion 360 and built with servo-actuated joints for multi-axis movement. CAD
               design, mechanical assembly, and Arduino-driven control in one build.
             </p>
-            <div class="project-links"><a href="https://github.com/Sam-payu-tech" target="_blank" rel="noopener">&gt; view_repo()</a></div>
+            <div class="project-links"><a href="https://github.com/Sam-payu-tech" target="_blank" rel="noopener">View Repository →</a></div>
           </div>
           <ul class="spec-list">
             <li>Full CAD model, Fusion 360</li>
@@ -239,12 +292,69 @@
             <li>Repeatable, controlled motion</li>
           </ul>
         </div>
-        <div class="media-slot project-media" style="min-height:140px;">+ VIDEO FEED [ arm in motion ]</div>
+        <div class="gallery" id="gallery-crane">
+          <div class="gallery-label"><span>Build Gallery</span><span id="counter-crane">1 / 12</span></div>
+          <div class="gallery-viewport">
+            <img class="gallery-img active" decoding="async" src="assets/arm-01.jpg" alt="Robotic arm build 1">
+            <img class="gallery-img" data-src="assets/arm-02.jpg" alt="Robotic arm build 2">
+            <img class="gallery-img" data-src="assets/arm-03.jpg" alt="Robotic arm build 3">
+            <img class="gallery-img" data-src="assets/arm-04.jpg" alt="Robotic arm build 4">
+            <img class="gallery-img" data-src="assets/arm-05.jpg" alt="Robotic arm build 5">
+            <img class="gallery-img" data-src="assets/arm-06.jpg" alt="Robotic arm build 6">
+            <img class="gallery-img" data-src="assets/arm-07.jpg" alt="Robotic arm build 7">
+            <img class="gallery-img" data-src="assets/arm-08.jpg" alt="Robotic arm build 8">
+            <img class="gallery-img" data-src="assets/arm-09.jpg" alt="Robotic arm build 9">
+            <img class="gallery-img" data-src="assets/arm-10.jpg" alt="Robotic arm build 10">
+            <img class="gallery-img" data-src="assets/arm-11.jpg" alt="Robotic arm build 11">
+            <img class="gallery-img" data-src="assets/arm-12.jpg" alt="Robotic arm build 12">
+            <button class="gallery-nav prev" aria-label="Previous photo">‹</button>
+            <button class="gallery-nav next" aria-label="Next photo">›</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <span class="num-tag">No. 03</span>
+        <div class="project-top">
+          <h3>3D Printing Business</h3>
+          <span class="chip">Engineering + Business</span>
+        </div>
+        <div class="project-body">
+          <div>
+            <p>
+              Identified demand among students and launched a custom 3D printing business, handling CAD
+              design, production, pricing, and marketing. Delivered 40+ units with a 400% return.
+            </p>
+          </div>
+          <ul class="spec-list">
+            <li>40+ units delivered</li>
+            <li>400% return on materials</li>
+            <li>Pricing, production, marketing</li>
+          </ul>
+        </div>
+        <div class="gallery" id="gallery-print">
+          <div class="gallery-label"><span>Product Gallery</span><span id="counter-print">1 / 11</span></div>
+          <div class="gallery-viewport">
+            <img class="gallery-img active" decoding="async" src="assets/print-01.jpg" alt="3D printed product 1">
+            <img class="gallery-img" data-src="assets/print-02.jpg" alt="3D printed product 2">
+            <img class="gallery-img" data-src="assets/print-03.jpg" alt="3D printed product 3">
+            <img class="gallery-img" data-src="assets/print-04.jpg" alt="3D printed product 4">
+            <img class="gallery-img" data-src="assets/print-05.jpg" alt="3D printed product 5">
+            <img class="gallery-img" data-src="assets/print-06.jpg" alt="3D printed product 6">
+            <img class="gallery-img" data-src="assets/print-07.jpg" alt="3D printed product 7">
+            <img class="gallery-img" data-src="assets/print-08.jpg" alt="3D printed product 8">
+            <img class="gallery-img" data-src="assets/print-09.jpg" alt="3D printed product 9">
+            <img class="gallery-img" data-src="assets/print-10.jpg" alt="3D printed product 10">
+            <img class="gallery-img" data-src="assets/print-11.jpg" alt="3D printed product 11">
+            <button class="gallery-nav prev" aria-label="Previous photo">‹</button>
+            <button class="gallery-nav next" aria-label="Next photo">›</button>
+          </div>
+        </div>
       </article>
 
     </div>
 
-    <div class="divider" style="margin-top:44px;">// supporting systems</div>
+    <div class="divider" style="margin-top:50px;"><span class="lbl">Supporting Work</span></div>
 
     <div class="minor-grid">
       <div class="minor-cell">
@@ -262,31 +372,32 @@
     </div>
   </section>
 
-  <div class="divider">// skillset</div>
+  <div class="divider"><span class="lbl">Skillset</span></div>
 
   <section id="skills">
-    <div class="minor-grid">
-      <div class="minor-cell">
-        <h4>Design &amp; Fabrication</h4>
+    <div class="skills-grid">
+      <div class="skill-cell">
+        <span class="tag">Design &amp; Fabrication</span>
         <p>Fusion 360, AutoCAD, CAD Modeling, 3D Printing</p>
       </div>
-      <div class="minor-cell">
-        <h4>Electronics &amp; Programming</h4>
+      <div class="skill-cell">
+        <span class="tag">Electronics &amp; Programming</span>
         <p>Arduino, Circuit Design, Sensor Integration, Radio Transceiver Systems, Python, C++, MATLAB</p>
       </div>
-      <div class="minor-cell">
-        <h4>Leadership &amp; Delivery</h4>
+      <div class="skill-cell">
+        <span class="tag">Leadership &amp; Delivery</span>
         <p>Project Management, Team Leadership, Technical Documentation, Event Coordination, Budget Allocation</p>
       </div>
     </div>
   </section>
 
-  <div class="divider">// activity log</div>
+  <div class="divider"><span class="lbl">Experience</span></div>
 
   <section id="experience">
     <div class="exp-row">
-      <div class="exp-date">2026.06 — present</div>
+      <div class="exp-date">Jun 2026 — Present</div>
       <div class="exp-role">
+        <span class="chip">Engineering</span>
         <h4>Research Intern</h4>
         <span class="org">CARE Lab, San Francisco State University — under Dr. Quintero</span>
         <p>Contributing to a hip exoskeleton study: treadmill trials, motion capture, force plate operation,
@@ -294,8 +405,9 @@
       </div>
     </div>
     <div class="exp-row">
-      <div class="exp-date">2025.06 — 2025.11</div>
+      <div class="exp-date">Summer 2025 — Nov 2025</div>
       <div class="exp-role">
+        <span class="chip">Engineering</span>
         <h4>Engineering Intern</h4>
         <span class="org">Verdant Structural Engineers, Berkeley, CA</span>
         <p>Digitized and reorganized 100+ structural CAD documents, establishing a standardized file
@@ -303,18 +415,21 @@
       </div>
     </div>
     <div class="exp-row">
-      <div class="exp-date">2025.09 — present</div>
+      <div class="exp-date">Fall 2025 — Present</div>
       <div class="exp-role">
+        <span class="chip">Engineering + Business</span>
         <h4>Founder &amp; President</h4>
         <span class="org">ALPFA, Berkeley City College Chapter</span>
         <p>Identified a gap in professional development access at Berkeley City College and launched the
-        first ALPFA chapter on campus. Built a team, managed the budget, and coordinated a panel with
-        JPMorgan Chase and a UC Berkeley Haas faculty member for 40+ students.</p>
+        first ALPFA chapter on campus, in partnership with the Hispanic Serving Institution Department.
+        Built a team, managed the budget, and coordinated a panel with JPMorgan Chase and a UC Berkeley
+        Haas faculty member for 40+ students.</p>
       </div>
     </div>
     <div class="exp-row">
-      <div class="exp-date">2024.01 — 2024.10</div>
+      <div class="exp-date">Jan 2024 — Oct 2024</div>
       <div class="exp-role">
+        <span class="chip">Business</span>
         <h4>Co-Founder</h4>
         <span class="org">3D Printing Design &amp; Manufacturing, Berkeley, CA</span>
         <p>Identified demand among students and launched a custom 3D printing business, delivering 40+
@@ -327,7 +442,7 @@
 
 <footer>
   <div class="wrap">
-    <span class="tag" id="contact">samuel_garcia // system idle</span>
+    <span class="tag" id="contact">Samuel Garcia — Engineering + Business</span>
     <div class="foot-links">
       <a href="mailto:payuski6@gmail.com">payuski6@gmail.com</a>
       <a href="tel:9512306611">951-230-6611</a>
@@ -336,6 +451,55 @@
     </div>
   </div>
 </footer>
+
+<script>
+  document.querySelectorAll('.gallery').forEach(function(gallery){
+    var imgs = gallery.querySelectorAll('.gallery-img');
+    var counter = gallery.querySelector('[id^="counter-"]');
+    var prevBtn = gallery.querySelector('.gallery-nav.prev');
+    var nextBtn = gallery.querySelector('.gallery-nav.next');
+    var current = 0;
+
+    function load(i){
+      var img = imgs[(i + imgs.length) % imgs.length];
+      if(img && img.dataset.src){ img.src = img.dataset.src; delete img.dataset.src; }
+    }
+
+    function show(index){
+      imgs[current].classList.remove('active');
+      current = (index + imgs.length) % imgs.length;
+      load(current); load(current + 1); load(current - 1);
+      imgs[current].classList.add('active');
+      if(counter){ counter.textContent = (current + 1) + ' / ' + imgs.length; }
+    }
+
+    // warm the neighbours of the opening image once the gallery nears the viewport
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(entries, obs){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ load(current + 1); load(current - 1); obs.disconnect(); }
+        });
+      }, { rootMargin: '300px' }).observe(gallery);
+    } else { load(current + 1); }
+
+    if(prevBtn){ prevBtn.addEventListener('click', function(){ show(current - 1); }); }
+    if(nextBtn){ nextBtn.addEventListener('click', function(){ show(current + 1); }); }
+
+    // touch swipe support
+    var startX = null;
+    var viewport = gallery.querySelector('.gallery-viewport');
+    if(viewport && imgs.length){
+      viewport.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; });
+      viewport.addEventListener('touchend', function(e){
+        if(startX === null) return;
+        var diff = e.changedTouches[0].clientX - startX;
+        if(diff > 40){ show(current - 1); }
+        else if(diff < -40){ show(current + 1); }
+        startX = null;
+      });
+    }
+  });
+</script>
 
 </body>
 </html>
