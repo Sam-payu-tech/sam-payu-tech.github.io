@@ -6,7 +6,7 @@ Engineering Portfolio**
 
 _Live site: 
 sam-payu-tech.github.io_
-https://sam-payu-tech.github.io/github.io/ 
+https://sam-payu-tech.github.io/
 
 This is my personal portfolio site, built to showcase my mechanical engineering and robotics projects alongside my resume. I'm currently studying Mechanical Engineering / Robotics at Berkeley City College and working as a Research Intern at the CARE Lab, San Francisco State University.
 
